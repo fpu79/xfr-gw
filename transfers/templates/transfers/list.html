@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>XFR Downloads</title></head>
+<body>
+  <h1>Bereitgestellte Dateien</h1>
+  <ul>
+    {% for transfer in transfers %}
+      <li><a href="{% url 'download' transfer.id %}">{{ transfer.filename }}</a></li>
+    {% empty %}
+      <li>Aktuell sind keine Dateien verfügbar.</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
